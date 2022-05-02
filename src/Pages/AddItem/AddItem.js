@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./AddItem.css";
 const AddItem = () => {
-    const handleRegister = event => {
+    const handleRegister = (event) => {
         event.preventDefault();
         const name = event.target.name.value;
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
         const description = event.target.description.value;
         const image = event.target.image.value;
-        const data = { name, price, quantity, description, image };
+        const supplier = event.target.supplier.value;
+        const data = { name, price, quantity, description, image, supplier };
         console.log(data);
+        
         const url = `http://localhost:5000/fruit`;
         fetch(url, {
             method: "POST",
@@ -21,7 +23,7 @@ const AddItem = () => {
         })
             .then((res) => res.json())
             .then((result) => console.log(result));
-    }
+    };
     return (
         <div className="addproduct p-3">
             <h2 className="text-center text-info pb-3">Add a Product</h2>
@@ -52,7 +54,7 @@ const AddItem = () => {
                         <Form.Group className="mb-3">
                             <Form.Label>Product Quantity</Form.Label>
                             <Form.Control
-                                type="number"
+                                type="text"
                                 name="quantity"
                                 placeholder="Enter quantity"
                                 required
@@ -71,16 +73,31 @@ const AddItem = () => {
                         required
                     />
                 </Form.Group>
+                <div className="row">
+                    <div className="col-md-6">
+                        <Form.Group className="mb-3">
+                            <Form.Label>Image</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="image"
+                                placeholder="Image url"
+                                required
+                            />
+                        </Form.Group>
+                    </div>
+                    <div className="col-md-6">
+                        <Form.Group className="mb-3">
+                            <Form.Label>Supplier Name</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="supplier"
+                                placeholder="Enter Supplier name"
+                                required
+                            />
+                        </Form.Group>
+                    </div>
+                </div>
 
-                <Form.Group className="mb-3">
-                    <Form.Label>Image</Form.Label>
-                    <Form.Control
-                        type="text"
-                        name="image"
-                        placeholder="Image url"
-                        required
-                    />
-                </Form.Group>
                 <Button className="btn-custom-special" type="submit">
                     Add Product
                 </Button>

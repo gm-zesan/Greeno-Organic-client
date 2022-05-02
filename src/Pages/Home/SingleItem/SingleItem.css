@@ -24,6 +24,7 @@
 }
 .card-degine img {
     width: 141px;
+    border-radius: 50%;
 }
 .card-body{
     padding-bottom: 0!important;
