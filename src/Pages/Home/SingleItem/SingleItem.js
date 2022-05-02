@@ -19,7 +19,7 @@ const SingleItem = ({ item }) => {
                     <p className="text-right">Supplier : Zesan</p>
                 </div>
                 <div className="card-footer text-center">
-                    <button className="btn-checkout">Update</button>
+                    <button className="btn-custom">Update</button>
                 </div>
             </div>
         </div>

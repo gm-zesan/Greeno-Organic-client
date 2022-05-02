@@ -49,13 +49,10 @@ const Header = () => {
                         </CustomLink>
                         {user && (
                             <>
-                                <CustomLink
-                                    className="nav-link"
-                                    to="/manageitem"
-                                >
+                                <CustomLink className="nav-link" to="/items">
                                     Manage-Item
                                 </CustomLink>
-                                <CustomLink className="nav-link" to="/items">
+                                <CustomLink className="nav-link" to="/myitems">
                                     My-Item
                                 </CustomLink>
                                 <CustomLink className="nav-link" to="/additem">

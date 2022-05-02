@@ -57,9 +57,6 @@ const Login = () => {
                         placeholder="Enter email"
                         required
                     />
-                    <Form.Control.Feedback type="invalid">
-                        Please provide a valid email.
-                    </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -71,13 +68,10 @@ const Login = () => {
                         placeholder="Password"
                         required
                     />
-                    <Form.Control.Feedback type="invalid">
-                        Please provide a valid password.
-                    </Form.Control.Feedback>
                 </Form.Group>
                 {loadingElement}
 
-                <Button className="registration-btn mt-3" type="submit">
+                <Button className="btn-custom-special mt-3" type="submit">
                     Login
                 </Button>
                 <div className="forgot-password mt-3">

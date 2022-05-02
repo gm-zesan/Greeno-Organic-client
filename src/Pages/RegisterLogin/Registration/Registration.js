@@ -93,13 +93,13 @@ const Register = () => {
                             />
                         </Form.Group>
                         {loadingElement}
-                            <Button
-                                disabled={!terms}
-                                className="registration-btn"
-                                type="submit"
-                            >
-                                Register
-                            </Button>
+                        <Button
+                            disabled={!terms}
+                            className="btn-custom-special"
+                            type="submit"
+                        >
+                            Register
+                        </Button>
                     </Form>
                     {errorElement}
                     <p className="text-center sign-toggle mt-3">
