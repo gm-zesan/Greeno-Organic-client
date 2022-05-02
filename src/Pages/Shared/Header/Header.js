@@ -6,18 +6,26 @@ import { useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import CustomLink from "../CustomeLink/CustomeLink";
 import logo from "../../../logo.png";
-import "./Header.css"
+import "./Header.css";
 const Header = () => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
+
     const handleLogOut = () => {
         signOut(auth);
     };
     const navigteLogIn = () => {
         navigate("/login");
     };
+
     return (
-        <Navbar sticky="top" collapseOnSelect expand="lg" variant="light" bg="white">
+        <Navbar
+            sticky="top"
+            collapseOnSelect
+            expand="lg"
+            variant="light"
+            bg="white"
+        >
             <Container>
                 <Navbar.Brand to="/">
                     <img
@@ -39,6 +47,22 @@ const Header = () => {
                         <CustomLink className="nav-link" to="/about">
                             About
                         </CustomLink>
+                        {user && (
+                            <>
+                                <CustomLink
+                                    className="nav-link"
+                                    to="/manageitem"
+                                >
+                                    Manage-Item
+                                </CustomLink>
+                                <CustomLink className="nav-link" to="/items">
+                                    My-Item
+                                </CustomLink>
+                                <CustomLink className="nav-link" to="/additem">
+                                    Add-Item
+                                </CustomLink>
+                            </>
+                        )}
                     </Nav>
                     <Nav className="ms-auto">
                         {user ? (

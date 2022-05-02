@@ -1,20 +1,53 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 import "./login.css"
+import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+
+    let from = location.state?.from?.pathname || "/";
+    let loadingElement;
+    let errorElement;
+
+
+    const [signInWithEmailAndPassword, user, loading, error] =
+        useSignInWithEmailAndPassword(auth);
     
+    if (user) {
+        navigate(from, { replace: true });
+    }
+
+    if (loading) {
+        loadingElement = (
+            <div>
+                <p className="text-info">Loading...</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        errorElement = (
+            <div>
+                <p className="text-danger">Error: {error?.message}</p>
+            </div>
+        );
+    }
     const handleLogin = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
+        signInWithEmailAndPassword(email, password);
     };
     return (
         <div className="register p-5 mt-5">
             <h2 className="text-center text-info pb-3">Login Here</h2>
-            <Form onClick={handleLogin}>
+            <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
@@ -42,11 +75,7 @@ const Login = () => {
                         Please provide a valid password.
                     </Form.Control.Feedback>
                 </Form.Group>
-
-                {/* =================================
-                                Custome Error n
-                    ====================================*/}
-                <p className="text-danger">{/* {error} */}</p>
+                {loadingElement}
 
                 <Button className="registration-btn mt-3" type="submit">
                     Login
@@ -55,12 +84,14 @@ const Login = () => {
                     <Link to="/">Forgot Password</Link>
                 </div>
             </Form>
+            {errorElement}
             <p className="text-center sign-toggle mt-3">
                 Don't Have account?
                 <Link to="/register" className="ps-2 text-info">
                     Register
                 </Link>
             </p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };
