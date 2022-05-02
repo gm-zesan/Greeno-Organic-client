@@ -1,12 +1,20 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
+
 import "./login.css"
 const Login = () => {
+    
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+    };
     return (
         <div className="register p-5 mt-5">
             <h2 className="text-center text-info pb-3">Login Here</h2>
-            <Form>
+            <Form onClick={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control

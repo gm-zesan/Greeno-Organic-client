@@ -16,13 +16,13 @@ const Footer = () => {
                             <div className="widget_box social_icons">
                                 <h6>Let's Connect</h6>
                                 <Link to="/">
-                                    <img src={Facebook} alt="" />
+                                    <img className="icon" src={Facebook} alt="" />
                                 </Link>
                                 <Link to="/" className="pl-3">
-                                    <img src={Git} alt="" />
+                                    <img className="icon" src={Git} alt="" />
                                 </Link>
                                 <Link to="/" className="pl-3">
-                                    <img src={Google} alt="" />
+                                    <img className="icon" src={Google} alt="" />
                                 </Link>
                             </div>
                         </div>
@@ -79,15 +79,14 @@ const Footer = () => {
             </div>
             <div className="footer_bottom">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-12 col-md-6 text-center">
-                            <p className="text-white">
-                                Copyright &copy; {year} All rights
-                                reserved.
+                    <div className="row mx-5">
+                        <div className="col-12 col-md-6">
+                            <p className="text-dark">
+                                Copyright &copy; {year} All rights reserved.
                             </p>
                         </div>
-                        <div className="col-12 col-md-6 text-center">
-                            <p className="text-white">
+                        <div className="col-12 col-md-6 text-right">
+                            <p className="text-dark">
                                 <Link to="/">Privacy Policy</Link> and{" "}
                                 <Link to="/"> Terms of Service</Link> apply.
                             </p>

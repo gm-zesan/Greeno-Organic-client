@@ -8,6 +8,8 @@ import Header from "./Pages/Shared/Header/Header";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Registration from "./Pages/RegisterLogin/Registration/Registration";
 import NoPage from "./Pages/NoPage/NoPage";
+import About from "./Pages/About/About";
+import Blog from "./Pages/Blog/Blog";
 function App() {
     return (
         <div className="App">
@@ -15,6 +17,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home></Home>}></Route>
                 <Route path="/home" element={<Home></Home>}></Route>
+                <Route path="/blog" element={<Blog></Blog>}></Route>
+                <Route path="/about" element={<About></About>}></Route>
                 <Route path="/login" element={<Login></Login>}></Route>
                 <Route
                     path="/register"

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import CustomLink from "../CustomeLink/CustomeLink";
 import logo from "../../../logo.png";
-import "./Header.css";
+import "./Header.css"
 const Header = () => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
