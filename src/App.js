@@ -13,6 +13,7 @@ import ManageItem from "./Pages/ManageItem/ManageItem";
 import MyItem from "./Pages/MyItem/MyItem";
 import AddItem from "./Pages/AddItem/AddItem";
 import RequireAuth from "./Pages/RegisterLogin/RequireAuth/RequireAuth";
+import UpdateProduct from "./Pages/UpdateProduct/UpdateProduct";
 function App() {
     return (
         <div className="App">
@@ -20,6 +21,14 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home></Home>}></Route>
                 <Route path="/home" element={<Home></Home>}></Route>
+                <Route
+                    path="/product/:productId"
+                    element={
+                        <RequireAuth>
+                            <UpdateProduct></UpdateProduct>
+                        </RequireAuth>
+                    }
+                ></Route>
                 <Route path="/blog" element={<Blog></Blog>}></Route>
                 <Route path="/about" element={<About></About>}></Route>
                 <Route

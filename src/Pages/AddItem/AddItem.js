@@ -10,19 +10,27 @@ const AddItem = () => {
         const description = event.target.description.value;
         const image = event.target.image.value;
         const supplier = event.target.supplier.value;
-        const data = { name, price, quantity, description, image, supplier };
-        console.log(data);
-        
+
         const url = `http://localhost:5000/fruit`;
         fetch(url, {
             method: "POST",
             headers: {
                 "content-type": "application/json",
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify({
+                name,
+                price,
+                quantity,
+                description,
+                image,
+                supplier,
+            }),
         })
             .then((res) => res.json())
-            .then((result) => console.log(result));
+            .then((result) => {
+                console.log(result)
+                event.target.reset()
+            });
     };
     return (
         <div className="addproduct p-3">

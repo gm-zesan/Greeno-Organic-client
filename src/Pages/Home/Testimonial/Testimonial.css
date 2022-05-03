@@ -1,0 +1,42 @@
+
+.testimonial{
+    width: 50%;
+    margin: 7rem auto;
+}
+.testimonial h2{
+    margin-bottom: 5rem;
+    font-weight: 700;
+}
+.testimonial .slick-arrow.slick-prev,
+.testimonial .slick-arrow.slick-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  border-radius: 5px;
+}
+.testimonial .slick-prev::before,
+.testimonial .slick-next::before {
+  display: none;
+}
+.testimonial .slick-arrow.slick-next {
+  right: -70px;
+}
+.testimonial .slick-arrow.slick-prev {
+  left: -70px;
+}
+.testimonial .slick-dots li button:before {
+  font-size: 15px;
+}
+.testimonial .slick-dots li {
+  top: 15px;
+}
+.single-testimonial {
+    text-align: center;
+}
+.usertest {
+    font-weight: 600;
+    color: #008037;
+}
