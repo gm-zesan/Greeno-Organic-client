@@ -15,12 +15,11 @@ const Register = () => {
     let loadingElement;
     let errorElement;
     const [createUserWithEmailAndPassword, user, loading, error] =
-        useCreateUserWithEmailAndPassword(auth, {
-            sendEmailVerification: true,
-        });
+        useCreateUserWithEmailAndPassword(auth, { sendEmailVerification :true});
 
     const [updateProfile] = useUpdateProfile(auth);
 
+    
     if (loading) {
         loadingElement = (
             <div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faFacebook,
@@ -6,34 +6,37 @@ import {
     faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import "./TopHeader.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 const TopHeader = () => {
     return (
-        <div class="container linehight text-center" style={{ width: "100%" }}>
-            <div class="topleft ">
-                <span class="location">
+        <div
+            className="container linehight text-center"
+            style={{ width: "100%" }}
+        >
+            <div className="topleft ">
+                <span className="location">
                     <i
-                        class="fas fa-map-marker-alt"
+                        className="fas fa-map-marker-alt"
                         style={{ marginRight: "8px" }}
                     ></i>
                     Dhaka, Banladesh
                 </span>
-                <span class="phone">
+                <span className="phone">
                     <i
-                        class="fas fa-phone rotate"
+                        className="fas fa-phone rotate"
                         style={{ marginRight: "8px" }}
                     ></i>
                     +8801770000000
                 </span>
-                <span class="mail">
+                <span className="mail">
                     <i
-                        class="fas fa-envelope"
+                        className="fas fa-envelope"
                         style={{ marginRight: "8px" }}
                     ></i>
                     greenoorganic55@gmail.com
                 </span>
             </div>
-            <div class="topright mt-2">
+            <div className="topright mt-2">
                 <Link to="/">
                     <FontAwesomeIcon
                         style={{ fontSize: "18px" }}

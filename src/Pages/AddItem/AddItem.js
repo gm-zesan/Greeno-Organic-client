@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button, Form } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import Banner from "../Shared/Banner/Banner";
 import Header from "../Shared/Header/Header";
+import toast from "react-hot-toast";
 import "./AddItem.css";
 const AddItem = () => {
+    const [user] = useAuthState(auth);
     const handleRegister = (event) => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -26,12 +30,14 @@ const AddItem = () => {
                 description,
                 image,
                 supplier,
+                email: user.email
             }),
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result)
-                event.target.reset()
+                console.log(result);
+                toast.success("Product added successfully");
+                event.target.reset();
             });
     };
     return (
@@ -40,7 +46,6 @@ const AddItem = () => {
             <Banner></Banner>
             <div className="addproduct">
                 <h2 className="text-center text-info pb-3">Add a Product</h2>
-
                 <Form onSubmit={handleRegister}>
                     <Form.Group className="mb-3">
                         <Form.Label>Product Name</Form.Label>

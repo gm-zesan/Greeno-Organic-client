@@ -7,6 +7,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./ManageItem.css";
 import Header from "../Shared/Header/Header";
 import Banner from "../Shared/Banner/Banner";
+import toast from "react-hot-toast";
 const ManageItem = () => {
     const [items, setItems] = useItems();
 
@@ -29,6 +30,7 @@ const ManageItem = () => {
                 .then((data) => {
                     const remaining = items.filter((item) => item._id !== id);
                     setItems(remaining);
+                    toast.success("Product deleted successfully");
                 });
         }
     };
@@ -43,7 +45,7 @@ const ManageItem = () => {
 
                 <ul className="list-unstyled">
                     {items.map((item) => (
-                        <>
+                        <div key={item._id}>
                             <li className="media align-items-center justify-content-between mb-3">
                                 <img
                                     src={item.image}
@@ -68,8 +70,7 @@ const ManageItem = () => {
                                     </button>
                                 </div>
                             </li>
-                            <hr />
-                        </>
+                        </div>
                     ))}
                 </ul>
             </div>

@@ -7,7 +7,6 @@ import avt from "../../../images/200.png";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import "./Testimonial.css";
 const PreviousBtn = (props) => {
-    console.log(props);
     const { className, onClick } = props;
     return (
         <div className={className} onClick={onClick}>

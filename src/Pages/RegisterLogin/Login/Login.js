@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 import "./login.css"
 import auth from '../../../firebase.init';
@@ -19,9 +19,22 @@ const Login = () => {
 
     const [signInWithEmailAndPassword, user, loading, error] =
         useSignInWithEmailAndPassword(auth);
+    const [user1] = useAuthState(auth);
     
-    if (user) {
-        navigate(from, { replace: true });
+    if (user1) {
+        const url = `http://localhost:5000/login`;
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({email:user1.email}),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                localStorage.setItem("accessToken", data.token);
+                navigate(from, { replace: true });
+            });
     }
 
     if (loading) {
@@ -78,7 +91,7 @@ const Login = () => {
                         Login
                     </Button>
                     <div className="forgot-password mt-3">
-                        <Link to="/">Forgot Password</Link>
+                        <Link to="/forgotPass">Forgot Password</Link>
                     </div>
                 </Form>
                 {errorElement}
