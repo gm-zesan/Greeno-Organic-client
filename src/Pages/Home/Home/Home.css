@@ -1,0 +1,43 @@
+.bg1{
+	margin-top: 70px;
+	background-image: url(../../../images/banner/bb.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: auto;
+	color: #fff;
+}
+.overlayuser{
+	background-color: #262626;
+	opacity: 0.7;
+	padding: 80px 0;
+}
+.overlayuser h2{
+	margin-bottom: 20px;
+	font-weight: normal;
+}
+.overlayuser .p{
+ width: 60%;
+}
+.button .btn{
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #008037;
+	color: #fff;
+    border: 2px solid #008037;
+}
+.button .b:hover{
+  background-color: transparent;
+  color: #fff;
+}
+.button .outline{
+	background: transparent;
+	color: #fff
+}
+.button .outline:hover{
+	background: #008037;
+	color: #fff;
+    border: 2px solid #008037!important;
+}

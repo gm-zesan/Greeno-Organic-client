@@ -1,9 +1,13 @@
 import React from "react";
 import { Accordion } from "react-bootstrap";
+import Banner from "../Shared/Banner/Banner";
+import Header from "../Shared/Header/Header";
 import "./Blog.css";
 const Blog = () => {
     return (
         <div>
+            <Header></Header>
+            <Banner></Banner>
             <div className="container">
                 <h2 className="text-center my-5">My Blogs</h2>
                 <Accordion style={{ height: "400px" }} className="w-50 mx-auto">

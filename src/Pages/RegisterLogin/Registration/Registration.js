@@ -7,6 +7,7 @@ import {
     useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Header from "../../Shared/Header/Header";
 const Register = () => {
     const [terms, setTerms] = useState(false);
     const navigate = useNavigate();
@@ -47,6 +48,7 @@ const Register = () => {
     };
     return (
         <div>
+            <Header></Header>
             <div className="my-5 mx-auto">
                 <div className="register p-5">
                     <h2 className="text-center text-info pb-3">Registration</h2>

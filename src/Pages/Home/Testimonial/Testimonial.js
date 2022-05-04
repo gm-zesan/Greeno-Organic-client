@@ -11,7 +11,7 @@ const PreviousBtn = (props) => {
     const { className, onClick } = props;
     return (
         <div className={className} onClick={onClick}>
-            <ArrowBackIos style={{ color: "gray", fontSize: "45px" }} />
+            <ArrowBackIos style={{ color: "#008037", fontSize: "45px" }} />
         </div>
     );
 };
@@ -19,22 +19,21 @@ const NextBtn = (props) => {
     const { className, onClick } = props;
     return (
         <div className={className} onClick={onClick}>
-            <ArrowForwardIos style={{ color: "gray", fontSize: "45px" }} />
+            <ArrowForwardIos style={{ color: "#008037", fontSize: "45px" }} />
         </div>
     );
 };
 const Testimonial = () => {
     return (
-        <div>
-            <div className="testimonial">
-                }
+        <div className="test-wrap">
+            <div className="testimonial mx-auto">
                 <h2 className="text-center">
-                    TESTI<span style={{ color: "#008037" }}>MONIAL</span>{" "}
+                    TESTI<span style={{ color: "#008037" }}>MONIAL</span>
                 </h2>
                 <Slider
                     prevArrow={<PreviousBtn />}
                     nextArrow={<NextBtn />}
-                    dots
+                    dots autoplay 
                 >
                     <div className="single-testimonial">
                         <Avatar

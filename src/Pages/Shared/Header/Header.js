@@ -7,6 +7,7 @@ import auth from "../../../firebase.init";
 import CustomLink from "../CustomeLink/CustomeLink";
 import logo from "../../../logo.png";
 import "./Header.css";
+
 const Header = () => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
@@ -19,69 +20,78 @@ const Header = () => {
     };
 
     return (
-        <Navbar
-            sticky="top"
-            collapseOnSelect
-            expand="lg"
-            variant="light"
-            bg="white"
-        >
-            <Container>
-                <Navbar.Brand to="/">
-                    <img
-                        src={logo}
-                        width="170"
-                        className="align-top"
-                        alt="Organic"
-                    />
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="ms-auto">
-                        <CustomLink className="nav-link" to="/">
-                            Home
-                        </CustomLink>
-                        <CustomLink className="nav-link" to="/blog">
-                            Blog
-                        </CustomLink>
-                        <CustomLink className="nav-link" to="/about">
-                            About
-                        </CustomLink>
-                        {user && (
-                            <>
-                                <CustomLink className="nav-link" to="/items">
-                                    Manage-Item
-                                </CustomLink>
-                                <CustomLink className="nav-link" to="/myitems">
-                                    My-Item
-                                </CustomLink>
-                                <CustomLink className="nav-link" to="/additem">
-                                    Add-Item
-                                </CustomLink>
-                            </>
-                        )}
-                    </Nav>
-                    <Nav className="ms-auto">
-                        {user ? (
-                            <button
-                                className="nav-link log-detail"
-                                onClick={handleLogOut}
-                            >
-                                Logout
-                            </button>
-                        ) : (
-                            <button
-                                className="nav-link log-detail"
-                                onClick={navigteLogIn}
-                                to="/login"
-                            >
-                                Login
-                            </button>
-                        )}
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <>
+            <Navbar
+                sticky="top"
+                collapseOnSelect
+                expand="lg"
+                variant="light"
+                bg="white"
+            >
+                <Container>
+                    <Navbar.Brand to="/">
+                        <img
+                            style={{ PaddingTop: "14px" }}
+                            src={logo}
+                            width="170"
+                            className="align-top logo"
+                            alt="Organic"
+                        />
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="ms-auto">
+                            <CustomLink className="nav-link" to="/">
+                                Home
+                            </CustomLink>
+                            <CustomLink className="nav-link" to="/blog">
+                                Blog
+                            </CustomLink>
+                            {user && (
+                                <>
+                                    <CustomLink
+                                        className="nav-link"
+                                        to="/items"
+                                    >
+                                        Manage-Item
+                                    </CustomLink>
+                                    <CustomLink
+                                        className="nav-link"
+                                        to="/myitems"
+                                    >
+                                        My-Item
+                                    </CustomLink>
+                                    <CustomLink
+                                        className="nav-link"
+                                        to="/additem"
+                                    >
+                                        Add-Item
+                                    </CustomLink>
+                                </>
+                            )}
+                        </Nav>
+                        <Nav className="ms-auto">
+                            {user ? (
+                                <button
+                                    className="nav-link log-detail"
+                                    onClick={handleLogOut}
+                                >
+                                    Logout
+                                </button>
+                            ) : (
+                                <button
+                                    className="nav-link log-detail"
+                                    onClick={navigteLogIn}
+                                    to="/login"
+                                >
+                                    Login
+                                </button>
+                            )}
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </>
     );
 };
 

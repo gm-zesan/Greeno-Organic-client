@@ -4,8 +4,10 @@ import "./About.css";
 const About = () => {
     return (
         <div>
-            <div className="container">
-                <h2 className="text-center my-5">About Myself</h2>
+            <div className="container welcome-wrap">
+                <h2 className="text-center">
+                    WELOME TO <span style={{ color: "#008037" }}>GREENO</span>
+                </h2>
                 <div className="row align-items-center">
                     <div className="col-md-6">
                         <p>

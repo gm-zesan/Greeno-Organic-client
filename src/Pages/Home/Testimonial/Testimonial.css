@@ -1,7 +1,11 @@
-
+.test-wrap{
+  background: #fdfcfa;
+}
 .testimonial{
     width: 50%;
-    margin: 7rem auto;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
 }
 .testimonial h2{
     margin-bottom: 5rem;

@@ -1,11 +1,17 @@
+
 nav.navbar {
     height: 70px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
-.navbar-nav{
+.navbar-nav {
     align-items: center;
 }
 .logo {
     max-width: 150px;
+}
+img.logo {
+    padding-top: 14px;
+    margin-left: -24px;
 }
 a.nav-link {
     font-family: "PT Sans", sans-serif;
@@ -15,19 +21,17 @@ a.nav-link {
     font-weight: 600;
     margin: 0px 14px;
     border: none;
-    border-bottom: 2px solid transparent;
 }
 a.nav-link:hover {
-    border-bottom: 2px solid #008037!important;
+    border-bottom: 2px solid #008037 !important;
     transition: 0.5s all ease;
 }
-.log-detail{
+.log-detail {
     background-color: transparent;
+    margin-right: -8px;
     font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 700;
-    margin: 0px 14px;
     border: none;
-    border-bottom: 2px solid transparent;
 }
