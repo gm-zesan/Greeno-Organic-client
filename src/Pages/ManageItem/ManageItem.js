@@ -40,13 +40,13 @@ const ManageItem = () => {
             <Banner></Banner>
             <div className="container">
                 <h2 className="mb-5 section-title">
-                    All<span> Products</span>
+                    All<span> Products</span>({items.length})
                 </h2>
 
                 <ul className="list-unstyled">
                     {items.map((item) => (
                         <div key={item._id}>
-                            <li className="media align-items-center justify-content-between mb-3">
+                            <li className="media custom-list mb-3">
                                 <img
                                     src={item.image}
                                     className="align-self-center mr-3"

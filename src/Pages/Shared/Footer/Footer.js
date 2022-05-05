@@ -16,7 +16,11 @@ const Footer = () => {
                             <div className="widget_box social_icons">
                                 <h6>Let's Connect</h6>
                                 <Link to="/">
-                                    <img className="icon" src={Facebook} alt="" />
+                                    <img
+                                        className="icon"
+                                        src={Facebook}
+                                        alt=""
+                                    />
                                 </Link>
                                 <Link to="/" className="pl-3">
                                     <img className="icon" src={Git} alt="" />
@@ -31,13 +35,13 @@ const Footer = () => {
                                 <h6>Provide</h6>
                                 <ul>
                                     <li>
-                                        <span>Quality Equipment</span>
+                                        <span>Organic</span>
                                     </li>
                                     <li>
                                         <span>Always Punctual</span>
                                     </li>
                                     <li>
-                                        <span>Product Service</span>
+                                        <span>Health</span>
                                     </li>
                                 </ul>
                             </div>
@@ -47,13 +51,13 @@ const Footer = () => {
                                 <h6>Services</h6>
                                 <ul>
                                     <li>
-                                        <span>Yoga</span>
+                                        <span>Free Delevery</span>
                                     </li>
                                     <li>
-                                        <span>Weight-loss</span>
+                                        <span>Quality Food</span>
                                     </li>
                                     <li>
-                                        <span>Bodu-building</span>
+                                        <span>Product Service</span>
                                     </li>
                                 </ul>
                             </div>
@@ -69,7 +73,7 @@ const Footer = () => {
                                         <span>My Blogs</span>
                                     </li>
                                     <li>
-                                        <span>Contact Us</span>
+                                        <span>Products</span>
                                     </li>
                                 </ul>
                             </div>
