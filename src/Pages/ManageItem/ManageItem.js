@@ -39,7 +39,7 @@ const ManageItem = () => {
             <Header></Header>
             <Banner></Banner>
             <div className="container">
-                <h2 className="mb-5 section-title">
+                <h2 className="mb-5 page-title">
                     All<span> Products</span>({items.length})
                 </h2>
 

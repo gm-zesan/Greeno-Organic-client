@@ -3,7 +3,9 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import avt from "../../../images/200.png";
+import avt1 from "../../../images/avatar/1 (1).png";
+import avt2 from "../../../images/avatar/1 (2).png";
+import avt3 from "../../../images/avatar/1 (3).png";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import "./Testimonial.css";
 const PreviousBtn = (props) => {
@@ -32,12 +34,13 @@ const Testimonial = () => {
                 <Slider
                     prevArrow={<PreviousBtn />}
                     nextArrow={<NextBtn />}
-                    dots autoplay 
+                    dots
+                    autoplay
                 >
                     <div className="single-testimonial">
                         <Avatar
                             className="mx-auto"
-                            src={avt}
+                            src={avt1}
                             style={{
                                 width: 120,
                                 height: 120,
@@ -45,12 +48,12 @@ const Testimonial = () => {
                             }}
                         ></Avatar>
                         <p>
-                            Phasellus vitae suscipit justo. Mauris pharetra
-                            feugiat ante id lacinia. Etiam faucibus mauris id
-                            tempor egestas. Duis luctus turpis at accumsan
-                            tincidunt. Phasellus risus risus, volutpat vel
-                            tellus ac, tincidunt fringilla massa. Etiam
-                            hendrerit dolor eget rutrum
+                            Organic farmers and food producers grow and produce
+                            food without using synthetic chemicals such as
+                            pesticides and artificial fertilisers. They do not
+                            use genetically modified (GM) components or expose
+                            food to irradiation. It is really good. And Good for
+                            health also.
                         </p>
                         <p style={{ fontStyle: "Italic", marginTop: "25px" }}>
                             <span className="usertest">Sonia patal</span>{" "}
@@ -60,7 +63,7 @@ const Testimonial = () => {
                     <div className="single-testimonial">
                         <Avatar
                             className="mx-auto"
-                            src={avt}
+                            src={avt2}
                             style={{
                                 width: 120,
                                 height: 120,
@@ -68,12 +71,12 @@ const Testimonial = () => {
                             }}
                         ></Avatar>
                         <p>
-                            Phasellus vitae suscipit justo. Mauris pharetra
-                            feugiat ante id lacinia. Etiam faucibus mauris id
-                            tempor egestas. Duis luctus turpis at accumsan
-                            tincidunt. Phasellus risus risus, volutpat vel
-                            tellus ac, tincidunt fringilla massa. Etiam
-                            hendrerit dolor eget rutrum
+                            Organic farmers and food producers grow and produce
+                            food without using synthetic chemicals such as
+                            pesticides and artificial fertilisers. They do not
+                            use genetically modified (GM) components or expose
+                            food to irradiation. It is really good. And Good for
+                            health also.
                         </p>
                         <p style={{ fontStyle: "Italic", marginTop: "25px" }}>
                             <span className="usertest">Jhon bro</span>{" "}
@@ -83,7 +86,7 @@ const Testimonial = () => {
                     <div className="single-testimonial">
                         <Avatar
                             className="mx-auto"
-                            src={avt}
+                            src={avt3}
                             style={{
                                 width: 120,
                                 height: 120,
@@ -91,12 +94,12 @@ const Testimonial = () => {
                             }}
                         ></Avatar>
                         <p>
-                            Phasellus vitae suscipit justo. Mauris pharetra
-                            feugiat ante id lacinia. Etiam faucibus mauris id
-                            tempor egestas. Duis luctus turpis at accumsan
-                            tincidunt. Phasellus risus risus, volutpat vel
-                            tellus ac, tincidunt fringilla massa. Etiam
-                            hendrerit dolor eget rutrum
+                            Organic farmers and food producers grow and produce
+                            food without using synthetic chemicals such as
+                            pesticides and artificial fertilisers. They do not
+                            use genetically modified (GM) components or expose
+                            food to irradiation. It is really good. And Good for
+                            health also.
                         </p>
                         <p style={{ fontStyle: "Italic", marginTop: "25px" }}>
                             <span className="usertest">Deshi vai</span> Media

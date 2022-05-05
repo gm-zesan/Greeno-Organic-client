@@ -1,3 +1,20 @@
 .confirm-box__content{
     position:fixed;
 }
+.page-title{
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 3rem;
+}
+.page-title span{
+    color: #008037;
+}
+.list-unstyled{
+    width: 80%;
+    margin: 0 auto;
+}
+.media-body {
+    margin-left: 30px;
+}

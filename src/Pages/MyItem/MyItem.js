@@ -36,7 +36,7 @@ const MyItem = () => {
             <Header></Header>
             <Banner></Banner>
             <div className="container">
-                <h2 className="mb-5 section-title">
+                <h2 className="mb-5 page-title">
                     My<span> Products</span> ({myProducts.length})
                 </h2>
 
@@ -51,7 +51,7 @@ const MyItem = () => {
                                         alt=""
                                     />
                                 </div>
-                                <div>
+                                <div className="media-body">
                                     <h5 className="mt-0 mb-1 display-6">
                                         {myProduct.name}
                                     </h5>

@@ -6,6 +6,9 @@ nav.navbar {
 .navbar-nav {
     align-items: center;
 }
+.ms-auto.navbar-nav {
+    background-color: #fff;
+}
 .logo {
     max-width: 170px;
 }
