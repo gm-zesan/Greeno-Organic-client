@@ -13,43 +13,55 @@ const Blog = () => {
                 <Accordion style={{ height: "400px" }} className="w-50 mx-auto">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>
-                            Difference between authorization and authentication
+                            Difference between javascript and nodejs.
                         </Accordion.Header>
                         <Accordion.Body>
-                            Authentication is the process of verifying who
-                            someone is. Authorization is the process of
-                            verifying what specific application, files and data
-                            a user has access to.
+                            Javascript is a Scripting language.It can be said
+                            that Javascript is the updated version of the ECMA
+                            script. It is basically used on the client-side.
+                            Javascript can only be run in the browsers. Whereas
+                            NodeJS is a Javascript runtime environment. We can
+                            run Javascript outside the browser with the help of
+                            NodeJS.It is mostly used on the server-side.
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>
-                            Why are you using firebase? What other options do
-                            you have to implement authentication?
+                            When should you use nodejs and when should you use
+                            mongodb?
                         </Accordion.Header>
                         <Accordion.Body>
-                            I am using firebse because it is a commplete package
-                            of products that allows us to build web and mobile
-                            application. It improves the application quality and
-                            help your clients grow their business. it creates
-                            Application without backend server.It brings a
-                            highly secure authentication system that improves
-                            the user experience while they sign-up and sign-in.
-                            The other options are Parse, Back4App, Kuzzle,
-                            Couchbase, Flutter.
+                            MongoDB is a database witch can be used with nodeJs.
+                            When we need to store data ,we use database. NodeJS
+                            is a Javascript runtime environment. NodeJs is
+                            basically used on backend of UI. It helps to store
+                            data on MongoDB.
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="2">
                         <Accordion.Header>
-                            What other services does firebase provide other than
-                            authentication
+                            Differences between sql and nosql databases.
                         </Accordion.Header>
                         <Accordion.Body>
-                            Other services does firebase provide other than
-                            authentication are given bellow: 1. Cloud Firestore
-                            2. Cloud Functions 3. Google Analytics 4.Hosting
-                            5.Cloud Storage 6.Predictions 7. Remote Config
-                            8.Dynamic Links 9.Cloud Messaging
+                            SQL databases have fixed or static or predefined
+                            schema. These databases are best suited for complex
+                            queries. Follows ACID property. NoSQL have dynamic
+                            schema. These databases are not so good for complex
+                            queries. Follows CAP(consistency, availability,
+                            partition tolerance).
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="3">
+                        <Accordion.Header>
+                            What is the purpose of jwt and how does it work?
+                        </Accordion.Header>
+                        <Accordion.Body>
+                            JWT, or JSON Web Token, is used to share security
+                            information between two parties — a client and a
+                            server. Each JWT contains encoded JSON objects,
+                            including a set of claims. JWTs are signed using a
+                            cryptographic algorithm to ensure that the claims
+                            cannot be altered after the token is issued.
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>

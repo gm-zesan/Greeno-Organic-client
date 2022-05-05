@@ -5,7 +5,12 @@ const Slider = () => {
         <div className="hero-container">
             <div className="heading">
                 <h2 className="hero title">Healthy Food</h2>
-                <p>Grow your strength</p>
+                <p>
+                    Grow your{" "}
+                    <span style={{color:"#008037"}}>
+                        <strong>strength</strong>
+                    </span>{" "}
+                </p>
                 <div className="mt-3 read-more">
                     <a href="/">Read More</a>
                 </div>
