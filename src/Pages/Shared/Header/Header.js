@@ -69,6 +69,9 @@ const Header = () => {
                                     </CustomLink>
                                 </>
                             )}
+                            <CustomLink className="nav-link" to="/about">
+                                About
+                            </CustomLink>
                         </Nav>
                         <Nav className="ms-auto">
                             {user ? (

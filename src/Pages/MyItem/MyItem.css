@@ -1,6 +1,8 @@
+.confirm-box__content{
+    position:fixed;
+}
 .custom-list{
-    /* display: flex; */
-    align-items: center;
+    margin: 0!important;
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }

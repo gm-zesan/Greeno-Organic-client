@@ -8,11 +8,11 @@ import {
 } from "react-firebase-hooks/auth";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Header from "../../Shared/Header/Header";
+import Loading from "../../Shared/Loading/Loading";
 const Register = () => {
     const [terms, setTerms] = useState(false);
     const navigate = useNavigate();
 
-    let loadingElement;
     let errorElement;
     const [createUserWithEmailAndPassword, user, loading, error] =
         useCreateUserWithEmailAndPassword(auth, { sendEmailVerification :true});
@@ -21,11 +21,7 @@ const Register = () => {
 
     
     if (loading) {
-        loadingElement = (
-            <div>
-                <p className="text-info">Loading...</p>
-            </div>
-        );
+        return <Loading></Loading>;
     }
 
     if (error) {
@@ -94,7 +90,6 @@ const Register = () => {
                                 label="Accept terms and conditions"
                             />
                         </Form.Group>
-                        {loadingElement}
                         <Button
                             disabled={!terms}
                             className="btn-custom-special"

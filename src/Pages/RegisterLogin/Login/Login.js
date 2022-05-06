@@ -1,34 +1,35 @@
-import React from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useAuthState, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import React from "react";
+import { Button, Form } from "react-bootstrap";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+    useAuthState,
+    useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 
-import "./login.css"
-import auth from '../../../firebase.init';
-import SocialLogin from '../SocialLogin/SocialLogin';
-import Header from '../../Shared/Header/Header';
+import "./login.css";
+import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
+import Header from "../../Shared/Header/Header";
+import Loading from "../../Shared/Loading/Loading";
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-
     let from = location.state?.from?.pathname || "/";
-    let loadingElement;
     let errorElement;
-
 
     const [signInWithEmailAndPassword, user, loading, error] =
         useSignInWithEmailAndPassword(auth);
     const [user1] = useAuthState(auth);
-    
+
     if (user1) {
-        const url = `http://localhost:5000/login`;
+        const url = `https://desolate-plateau-21312.herokuapp.com/login`;
         fetch(url, {
             method: "POST",
             headers: {
                 "content-type": "application/json",
             },
-            body: JSON.stringify({email:user1.email}),
+            body: JSON.stringify({ email: user1.email }),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -38,11 +39,7 @@ const Login = () => {
     }
 
     if (loading) {
-        loadingElement = (
-            <div>
-                <p className="text-info">Loading...</p>
-            </div>
-        );
+        return <Loading></Loading>;
     }
 
     if (error) {
@@ -85,7 +82,6 @@ const Login = () => {
                             required
                         />
                     </Form.Group>
-                    {loadingElement}
 
                     <Button className="btn-custom-special mt-3" type="submit">
                         Login

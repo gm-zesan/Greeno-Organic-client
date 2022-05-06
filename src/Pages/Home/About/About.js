@@ -10,18 +10,18 @@ const About = () => {
                 </h2>
                 <div className="row align-items-center">
                     <div className="col-md-6">
-                        <p>
-                            A web developer is a programmer who specializes in,
-                            or is specifically engaged in, the development of
-                            World Wide Web applications using a client–server
-                            model.
-                            <hr />I am Zesan. My goal is in 2022 to become a
-                            fullstack developer. It is so much challanging to
-                            me. But I have to do it.I want to be a fullstack
-                            developer. I want to move forward with this in mind.
-                            I think 2022 is going to be the most challenging for
-                            me. And it will bring the biggest change in my life
-                            inshallah.
+                        <p className="text-justify">
+                            Welcome to my Greeno Organic store. You don't have
+                            to cook fancy or complicated masterpieces - just
+                            good food from fresh ingredients. We must make
+                            organic the conventional choice and not the
+                            exception available only to the rich and educated.
+                            <hr />
+                            For the organic food, the less it's designed, the
+                            better it is. Taste and style is beyond clothes.
+                            It's in food; it's in quality. Working out, healthy
+                            bodies, organic food-they're all part of the same
+                            thing. So always you are welcome to my <strong>Greeno</strong>.
                         </p>
                     </div>
                     <div className="col-md-6">

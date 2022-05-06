@@ -22,10 +22,10 @@ const SingleItem = ({ item }) => {
                 <img src={image} className="card-img-top mx-auto" alt="..." />
                 <div className="card-body">
                     <h3 className="card-title text-center mb-3">{name}</h3>
-                    <h6 className="text-center">Price: $ {price}</h6>
+                    <h6 className="text-center">Price: $ {price} / kg</h6>
                     <h6 className="text-center">Quantity: {quantity} kg</h6>
                     <hr />
-                    <p className="card-text">{description}</p>
+                    <p className="card-text text-truncate">{description}</p>
                     <p className="text-right">Supplier : {supplier}</p>
                 </div>
                 <div className="card-footer text-center">

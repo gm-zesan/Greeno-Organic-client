@@ -13,6 +13,7 @@ import AddItem from "./Pages/AddItem/AddItem";
 import RequireAuth from "./Pages/RegisterLogin/RequireAuth/RequireAuth";
 import UpdateProduct from "./Pages/UpdateProduct/UpdateProduct";
 import ForgotPass from "./Pages/RegisterLogin/ForgotPass/ForgotPass";
+import About from "./Pages/About/About";
 function App() {
     return (
         <div className="App">
@@ -28,6 +29,7 @@ function App() {
                     }
                 ></Route>
                 <Route path="/blog" element={<Blog></Blog>}></Route>
+                <Route path="/about" element={<About></About>}></Route>
                 <Route
                     path="/items"
                     element={

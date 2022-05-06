@@ -1,6 +1,4 @@
-.confirm-box__content{
-    position:fixed;
-}
+
 .page-title{
     color: #000;
     text-align: center;
@@ -14,7 +12,4 @@
 .list-unstyled{
     width: 80%;
     margin: 0 auto;
-}
-.media-body {
-    margin-left: 30px;
 }

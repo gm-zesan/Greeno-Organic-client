@@ -9,7 +9,7 @@ const UpdateProduct = () => {
     const { productId } = useParams();
     const [product, setProduct] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/product/${productId}`;
+        const url = `https://desolate-plateau-21312.herokuapp.com/product/${productId}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
@@ -18,13 +18,16 @@ const UpdateProduct = () => {
     }, [productId]);
 
     const handleDecrease = () => {
-        fetch(`http://localhost:5000/fruit/${productId}`, {
-            method: "PUT",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify({ product }),
-        })
+        fetch(
+            `https://desolate-plateau-21312.herokuapp.com/fruit/${productId}`,
+            {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify({ product }),
+            }
+        )
             .then((response) => response.json())
             .then((data) => {
                 product.quantity = product.quantity - 1;
@@ -36,13 +39,16 @@ const UpdateProduct = () => {
     const increaseQuantity = (event) => {
         event.preventDefault();
         const quantity = parseInt(event.target.quantity.value);
-        fetch(`http://localhost:5000/increaseqnty/${productId}`, {
-            method: "PUT",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify({ quantity }),
-        })
+        fetch(
+            `https://desolate-plateau-21312.herokuapp.com/increaseqnty/${productId}`,
+            {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify({ quantity }),
+            }
+        )
             .then((response) => response.json())
             .then((data) => {
                 product.quantity = product.quantity + parseInt(quantity);
@@ -63,13 +69,13 @@ const UpdateProduct = () => {
 
                     <div className="col-md-6">
                         <p className="h2">{product.name}</p>
-                        <p className="h4">Price : $ {product.price}</p>
+                        <p className="h4">Price : $ {product.price} per KG</p>
                         <p className="h4 quantity">
                             Quantity : {product.quantity} kg
                         </p>
                         <p className="desc">{product.description}</p>
                         <p className="text-right">
-                            <small>Supplier</small>
+                            <small>Supplier : {product.supplier}</small>
                         </p>
                         {product.quantity > 0 ? (
                             <button

@@ -5,19 +5,18 @@ import "./FeaturedItem.css";
 const FeateredItem = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/fruits")
+        fetch("https://desolate-plateau-21312.herokuapp.com/fruits")
             .then((res) => res.json())
             .then((data) => setItems(data.slice(-6)));
     }, []);
-    
+
     return (
         <div className="container">
             <h2 className="mb-5 section-title">
                 Featured<span> Products</span>
             </h2>
             <div className="row row-cols-1 row-cols-md-3">
-                {
-                    items.map((item) => (
+                {items.map((item) => (
                     <SingleItem key={item._id} item={item}></SingleItem>
                 ))}
             </div>

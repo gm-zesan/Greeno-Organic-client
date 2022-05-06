@@ -17,7 +17,7 @@ const AddItem = () => {
         const image = event.target.image.value;
         const supplier = event.target.supplier.value;
 
-        const url = `http://localhost:5000/fruit`;
+        const url = `https://desolate-plateau-21312.herokuapp.com/fruit`;
         fetch(url, {
             method: "POST",
             headers: {
@@ -30,7 +30,7 @@ const AddItem = () => {
                 description,
                 image,
                 supplier,
-                email: user.email
+                email: user.email,
             }),
         })
             .then((res) => res.json())
@@ -52,7 +52,7 @@ const AddItem = () => {
                         <Form.Control
                             type="text"
                             name="name"
-                            placeholder="Enter name"
+                            placeholder="Product name will be here"
                             required
                         />
                     </Form.Group>
