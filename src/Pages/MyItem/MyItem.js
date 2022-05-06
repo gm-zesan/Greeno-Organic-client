@@ -9,7 +9,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import auth from "../../firebase.init";
 import Banner from "../Shared/Banner/Banner";
 import Header from "../Shared/Header/Header";
-import axios from 'axios';
+import axios from "axios";
 import "./MyItem.css";
 import toast from "react-hot-toast";
 const MyItem = () => {

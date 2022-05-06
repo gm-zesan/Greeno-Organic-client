@@ -15,32 +15,12 @@ const UpdateProduct = () => {
             .then((data) => {
                 setProduct(data);
             });
-    }, [productId]);
+    }, [productId, product]);
 
     const handleDecrease = () => {
+        const quantity = product.quantity - 1;
         fetch(
             `https://desolate-plateau-21312.herokuapp.com/fruit/${productId}`,
-            {
-                method: "PUT",
-                headers: {
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify({ product }),
-            }
-        )
-            .then((response) => response.json())
-            .then((data) => {
-                product.quantity = product.quantity - 1;
-                setProduct({ ...product });
-                toast.success("Product delevired");
-            });
-    };
-
-    const increaseQuantity = (event) => {
-        event.preventDefault();
-        const quantity = parseInt(event.target.quantity.value);
-        fetch(
-            `https://desolate-plateau-21312.herokuapp.com/increaseqnty/${productId}`,
             {
                 method: "PUT",
                 headers: {
@@ -51,12 +31,31 @@ const UpdateProduct = () => {
         )
             .then((response) => response.json())
             .then((data) => {
-                product.quantity = product.quantity + parseInt(quantity);
-                setProduct({ ...product });
+                toast.success("Product delevired");
+            });
+    };
+
+    const increaseQuantity = (event) => {
+        event.preventDefault();
+        const quantity =
+            parseInt(product.quantity) + parseInt(event.target.quantity.value);
+        fetch(
+            `https://desolate-plateau-21312.herokuapp.com/fruit/${productId}`,
+            {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify({ quantity }),
+            }
+        )
+            .then((response) => response.json())
+            .then((data) => {
                 toast.success("Product's quantity added");
                 event.target.reset();
             });
     };
+
     return (
         <>
             <Header></Header>
