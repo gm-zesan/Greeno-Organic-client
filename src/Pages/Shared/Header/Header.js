@@ -28,7 +28,9 @@ const Header = () => {
                 variant="light"
                 bg="white"
             >
-                <Container>
+                <Container
+                    style={{ position: "absolute", left: 0, top: "-65px" }}
+                >
                     <Navbar.Brand to="/">
                         <img
                             style={{ PaddingTop: "14px" }}
