@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
-import item from "../../images/200.png";
 import Banner from "../Shared/Banner/Banner";
 import Header from "../Shared/Header/Header";
 import "./UpdateProduct.css";
@@ -19,7 +18,6 @@ const UpdateProduct = () => {
     }, [productId]);
 
     const handleDecrease = () => {
-        
         fetch(`http://localhost:5000/fruit/${productId}`, {
             method: "PUT",
             headers: {
@@ -32,10 +30,10 @@ const UpdateProduct = () => {
                 product.quantity = product.quantity - 1;
                 setProduct({ ...product });
                 toast.success("Product delevired");
-            })
-    }
+            });
+    };
 
-    const increaseQuantity=(event)=>{
+    const increaseQuantity = (event) => {
         event.preventDefault();
         const quantity = parseInt(event.target.quantity.value);
         fetch(`http://localhost:5000/increaseqnty/${productId}`, {
@@ -52,7 +50,7 @@ const UpdateProduct = () => {
                 toast.success("Product's quantity added");
                 event.target.reset();
             });
-    }
+    };
     return (
         <>
             <Header></Header>
@@ -60,22 +58,29 @@ const UpdateProduct = () => {
             <div className="container my-5">
                 <div className="row align-items-center justify-content-center">
                     <div className="col-md-6 text-center">
-                        <img src={item} alt="" />
+                        <img src={product.image} alt="" />
                     </div>
 
                     <div className="col-md-6">
                         <p className="h2">{product.name}</p>
                         <p className="h4">Price : $ {product.price}</p>
                         <p className="h4 quantity">
-                            Quantity : {product.quantity}
+                            Quantity : {product.quantity} kg
                         </p>
                         <p className="desc">{product.description}</p>
                         <p className="text-right">
                             <small>Supplier</small>
                         </p>
-                        <button onClick={handleDecrease} className="btn-custom">
-                            Delever a Product
-                        </button>
+                        {product.quantity > 0 ? (
+                            <button
+                                onClick={handleDecrease}
+                                className="btn-custom"
+                            >
+                                Delever a Product
+                            </button>
+                        ) : (
+                            <p>SOLD-OUT</p>
+                        )}
                         <div className="or-container">
                             <div className="line-separator"></div>
                             <div className="or-label">or</div>

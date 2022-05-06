@@ -46,6 +46,7 @@ const MyItem = () => {
                             <li className="media custom-list mb-3">
                                 <div>
                                     <img
+                                        style={{ width: "350px" }}
                                         src={myProduct.image}
                                         className="align-self-center mr-3"
                                         alt=""
@@ -55,8 +56,8 @@ const MyItem = () => {
                                     <h5 className="mt-0 mb-1 display-6">
                                         {myProduct.name}
                                     </h5>
-                                    <h5>Price : {myProduct.price}</h5>
-                                    <h5>Quantity : {myProduct.quantity}</h5>
+                                    <h5>Price : $ {myProduct.price}</h5>
+                                    <h5>Quantity : {myProduct.quantity} kg</h5>
                                     <p>{myProduct.description}</p>
                                     <p>Supplier : {myProduct.supplier}</p>
                                 </div>

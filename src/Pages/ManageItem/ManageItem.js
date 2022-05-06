@@ -48,16 +48,17 @@ const ManageItem = () => {
                         <div key={item._id}>
                             <li className="media custom-list mb-3">
                                 <img
+                                    style={{width:"350px"}}
                                     src={item.image}
                                     className="align-self-center mr-3"
                                     alt=""
                                 />
                                 <div className="media-body">
-                                    <h5 className="mt-0 mb-1 display-6">
+                                    <h5 className="mt-0 mb-3 display-6">
                                         {item.name}
                                     </h5>
-                                    <h5>Price : {item.price}</h5>
-                                    <h5>Quantity : {item.quantity}</h5>
+                                    <h5>Price : $ {item.price}</h5>
+                                    <h5>Quantity : {item.quantity} kg</h5>
                                     <p>{item.description}</p>
                                     <p>Supplier : {item.supplier}</p>
                                 </div>

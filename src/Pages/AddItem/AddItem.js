@@ -63,7 +63,7 @@ const AddItem = () => {
                                 <Form.Control
                                     type="number"
                                     name="price"
-                                    placeholder="Enter price"
+                                    placeholder="$ pre kg"
                                     required
                                 />
                             </Form.Group>
@@ -74,7 +74,7 @@ const AddItem = () => {
                                 <Form.Control
                                     type="text"
                                     name="quantity"
-                                    placeholder="Enter quantity"
+                                    placeholder="Enter quantity in kg"
                                     required
                                 />
                             </Form.Group>
