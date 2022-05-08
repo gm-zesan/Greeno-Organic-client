@@ -18,8 +18,7 @@ const MyItem = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // const email = user?.email;
-        const getOrders = async () => {
+        const getProducts = async () => {
             const email = user?.email;
             const url = `https://desolate-plateau-21312.herokuapp.com/myproducts?email=${email}`;
             try {
@@ -42,7 +41,7 @@ const MyItem = () => {
                 }
             }
         };
-        getOrders();
+        getProducts();
     }, [user]);
 
     const handleDelete = async (id) => {
@@ -54,7 +53,6 @@ const MyItem = () => {
             },
         };
         const result = await confirm("Are you sure?", options);
-        // const proceed = window.confirm("Are you sure?");
         if (result) {
             const url = `https://desolate-plateau-21312.herokuapp.com/fruit/${id}`;
             fetch(url, {
