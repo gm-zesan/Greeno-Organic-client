@@ -23,7 +23,7 @@ const Login = () => {
     const [user1] = useAuthState(auth);
 
     if (user1) {
-        const url = `https://desolate-plateau-21312.herokuapp.com/login`;
+        const url = `https://greeno-organic.onrender.com/login`;
         fetch(url, {
             method: "POST",
             headers: {

@@ -17,7 +17,7 @@ const AddItem = () => {
         const image = event.target.image.value;
         const supplier = event.target.supplier.value;
 
-        const url = `https://desolate-plateau-21312.herokuapp.com/fruit`;
+        const url = `https://greeno-organic.onrender.com/fruit`;
         fetch(url, {
             method: "POST",
             headers: {

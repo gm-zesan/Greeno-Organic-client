@@ -5,7 +5,7 @@ import "./FeaturedItem.css";
 const FeateredItem = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch("https://desolate-plateau-21312.herokuapp.com/fruits")
+        fetch("https://greeno-organic.onrender.com/fruits")
             .then((res) => res.json())
             .then((data) => setItems(data.slice(-6)));
     }, []);

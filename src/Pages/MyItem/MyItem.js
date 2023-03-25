@@ -20,7 +20,7 @@ const MyItem = () => {
     useEffect(() => {
         const getProducts = async () => {
             const email = user?.email;
-            const url = `https://desolate-plateau-21312.herokuapp.com/myproducts?email=${email}`;
+            const url = `https://greeno-organic.onrender.com/myproducts?email=${email}`;
             try {
                 const { data } = await axios.get(url, {
                     headers: {
@@ -54,7 +54,7 @@ const MyItem = () => {
         };
         const result = await confirm("Are you sure?", options);
         if (result) {
-            const url = `https://desolate-plateau-21312.herokuapp.com/fruit/${id}`;
+            const url = `https://greeno-organic.onrender.com/fruit/${id}`;
             fetch(url, {
                 method: "DELETE",
             })
